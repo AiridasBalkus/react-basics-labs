@@ -98,3 +98,15 @@ form {
   width: 50%;
   margin: auto;
 }
+.task-low {
+  background-color: #e0f7fa;
+  border-left: 5px solid #009688;
+}
+.task-medium {
+  background-color: #fff9c4;
+  border-left: 5px solid #fbc02d;
+}
+.task-high {
+  background-color: #ffcdd2;
+  border-left: 5px solid #d32f2f;
+}

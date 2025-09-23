@@ -22,9 +22,14 @@ function App() {
     tasks.splice(taskIndex, 1);
     setTaskState({tasks});
   } 
+    const [ formState, setFormState ] = useState({
+    title: "",
+    description: "",
+    deadline: "",
+    priority: "Low" // Add default priority
+  });
     const formChangeHandler = (event) => {
     let form = {...formState};
-    console.log(formState);
     switch(event.target.name) {
       case "title":
           form.title = event.target.value;
@@ -34,6 +39,9 @@ function App() {
           break;
       case "deadline":
           form.deadline = event.target.value;
+          break;
+      case "priority": // Add priority case
+          form.priority = event.target.value;
           break;
       default:
           form = formState;
@@ -52,12 +60,6 @@ function App() {
     setTaskState({tasks});
   }
 
-  const [ formState, setFormState ] = useState({
-    title: "",
-    description: "",
-    deadline: ""
-  });
-
   return (
     <div className="container">
       <h1>Tasky</h1>
@@ -74,7 +76,14 @@ function App() {
 
     />
   ))}
-  <AddTaskForm change={formChangeHandler} submit={formSubmitHandler} />
+  <AddTaskForm
+  change={formChangeHandler}
+  submit={formSubmitHandler}
+  title={formState.title}
+  description={formState.description}
+  deadline={formState.deadline}
+  priority={formState.priority}
+  />
   </div>
   );
 
