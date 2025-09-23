@@ -40,3 +40,9 @@ div {
 .description {
   font-style: italic;
 }
+.priority {
+  position: relative;
+  bottom: 5px;
+  width: 100%;
+  font-weight: bold;
+}
