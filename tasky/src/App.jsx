@@ -26,7 +26,7 @@ function App() {
     title: "",
     description: "",
     deadline: "",
-    priority: "Low" // Add default priority
+    priority: "", 
   });
     const formChangeHandler = (event) => {
     let form = {...formState};
@@ -40,7 +40,7 @@ function App() {
       case "deadline":
           form.deadline = event.target.value;
           break;
-      case "priority": // Add priority case
+      case "priority":
           form.priority = event.target.value;
           break;
       default:
@@ -73,7 +73,6 @@ function App() {
       done={task.done}
       markDone={() => doneHandler(index)}
       deleteTask={() => deleteHandler(index)}
-
     />
   ))}
   <AddTaskForm
